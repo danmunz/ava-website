@@ -1,68 +1,38 @@
-<html>
+<!doctype html>
 
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 <style>
-
-@font-face {
-  font-family: Galada;
-  src: url("assets/Galada-Regular.ttf");
-}
-
-@font-face {
-  font-family: SourceSansPro;
-  src: url("assets/SourceSansPro-Regular.ttf");
-}
-
-html{
-  background: url("img/background.jpg");
-  font-family: SourceSansPro;
-}
-
 body{
-background-color:rgba(255, 255, 255, 0.6);
-margin: 20px;
-padding: 20px;
-}
-
-h1, h2{
+  padding: 50px;
+  font-size: 6rem;
   text-align: center;
-  font-family: Galada;
+background-color: HotPink;
 }
-
-h1{
-  color: green;
-  font-size: 3em;
+#RandomWordButton{font-size: 3rem;
+  padding: 10; color: green;
+background: orange;
 }
-
-h2{
-  1.5em;
-}
-
-p{
-  font-size: 1.5em;
-}
-
 </style>
 
 </head>
 
-<body>
-<h1>Welcome to Monkatown!</h1>
-<h2>by Ava June Munz and Daniel Aaron Munz</h2>
+<script type="text/javascript">
+var words = ["Fart", "Potato", "Unicorn", "SmellyCheese", "Olive", "Melon", "Tortellini", "Penguin", "Meep",
+    "MonkeyButt"
+];
+var RandomWordCycle = words.length;
+$(document).ready(function() {
+    $("#RandomWordButton").click(function() {
+            var RandomWordPicker = Math.floor(Math.random() * RandomWordCycle);
+            $("#RandomWordSpace").text(words[RandomWordPicker]);
+        });
+});
+</script>
 
-<p>Monkatown is in Argentina, South America. Many populations of monkeys live there. The biggest jungle in Monkatown is called Monkatown Jungle - or Mungle, for short.</p>
-
-<img src="img/monkeyfamily.png" alt="a monkey family">
-
-<p>The Mungle is very green. The monkeys all over Monkatown cook by fires. They cook beetles, banana pancakes, coconut bacon, and ladybug sugar.</p>
-
-<p>Please attend to the Monkatown Day Carnival! We hope you have fun at it. They have lots of fun games including Guess Which Coconut The Rock Is Under, Vine Swings, and Banana Cream Pie Toss. They also have snacks like popbeetles and motton candy.</p>
-
-<p>Monkatown is a very happy place. They have a good leader, Mayor Mike, who makes sure that all the monkeys of Monkatown have clean bathing ponds, safe gondola roads, healthy jungle air to breathe, and healthy food.</p>
-
-<h1>The End!</h1>
-
+<body><div id="RandomWordSpace"></div>
+<button type="button" id="RandomWordButton">Click here to generate a random word</button>
 </body>
 
 </html>
